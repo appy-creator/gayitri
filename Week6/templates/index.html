@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>  
+  <title>Summarization</title>
+  <link rel="icon" type="" href="../Media/logo.jpg">
+  <link rel = "stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <style type="">
+    .menu-type li{
+      display:inline;
+      padding: 20px;
+      cursor: pointer;
+    }
+    .menu-type{
+      margin-top: 20px;
+    }
+    a:hover {
+         color: red;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .dropdown-menu.a{
+      color: red;
+    }
+    .footer{
+      height: 7%;
+      width: 100%;
+      position: fixed;
+      top: 93%;
+      left: 0%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-family: times new roman;
+      padding: 1.2%;
+    }
+    .project-heading{
+      border-right: 5px solid white;
+      font-variant: small-caps;
+      font-weight: bold;
+      color: white;
+      text-shadow: 5px 5px 1px black;
+      font-size: 30px;
+      font-family: times new roman;
+
+    }
+    .dropdown-menu{
+      background-color: black;
+    }
+    .dropdown-item
+    {
+       color:white;
+       font-variant: small-caps;
+       font-family: times new roman;
+    }
+    .nav-link{
+      color: white;
+    }
+    div.dropdown-menu>a:hover{
+      color:red;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="header">
+      <div class="row" style="background-color: black;">
+         <div class="col-md-3 text-center project-heading">
+          <p>Summarization</p>
+        </div>
+        <div class="col-md-9">
+          <nav class="navbar navbar-expand-md">
+            <ul class="navbar-nav" style="font-variant: small-caps;font-family: times new roman; font-size: 20px; color: white;">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home1' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'About1' %}">About</a>
+              </li>
+              <li class="nav-item dropdown" >
+                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
+                        <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'Abs_summarize' %}">Abstractive Summerization</a>
+                    <a class="dropdown-item" href="{% url 'Ext_summarize' %}">Extractive Summerization</a>
+                    <a class="dropdown-item" href="{% url 'ODQA_dataset' %}">ODQA Dataset</a>
+                    <a class="dropdown-item" href="{% url 'SQuAD_dataset' %}">SQuAD Dataset</a>
+                        </div>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'ContactUs1' %}">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Help1' %}">Help?</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="content-body">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <div class="footer">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>&copy; IIITH Summer Internship, 2020</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'css/bootstrap.min.css' %}"></script>
+</body>
+</html>
